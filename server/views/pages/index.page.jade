@@ -1,0 +1,18 @@
+extend ../layouts/default.layout.jade
+
+append links
+  script(src="//cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js")
+
+block content
+  div.row
+    h1 #{pageHeading}
+  div.row
+    article#comments
+  br
+  hr
+  div.row
+    article#products
+
+append scripts
+  script(src="/js/components/CommentBox.js")
+  script(src="/js/components/ProductSearch.js")
