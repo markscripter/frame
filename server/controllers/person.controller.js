@@ -3,6 +3,7 @@
 var mongoose = require('mongoose');
 var Person = mongoose.model('Person');
 var _ = require('lodash');
+var passport = require('passport');
 
 module.exports.create = function (req, res) {
   var person = new Person(req.body);
@@ -48,4 +49,33 @@ module.exports.personById = function (req, res, next, id) {
     req.person = person;
     next();
   });
+};
+
+module.exports.isLoggedIn = function (req, res, next) {
+  if (!req.isAuthenticated()) {
+    req.flash('error', '401');
+    res.redirect('/login');
+  }
+  next();
+};
+
+module.exports.signIn = function (req, res, next) {
+  passport.authenticate('local', function (err, user) {
+    if (err || !user) {
+      req.flash('error', '400');
+      res.redirect('/login');
+    } else {
+      // Remove sensitive data before login
+      user.password = undefined;
+      user.salt = undefined;
+
+      req.login(user, function (err) {
+        if (err) {
+          res.status(400).send(err);
+        } else {
+          res.json(user);
+        }
+      });
+    }
+  })(req, res, next);
 };

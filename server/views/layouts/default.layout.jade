@@ -3,15 +3,19 @@ html(lang="en")
  head
   title #{pageTitle}
   block meta
-   meta(charset="utf-8")
-   meta(name="apple-mobile-web-app-capable" content="yes")
-   meta(name="description" content="Enter description here.")
+    meta(charset="utf-8")
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    meta(name="description" content="Enter description here.")
   block links
-   link(rel="shortcut icon" href="/static/misc/favicon.ico")
-   link(type="text/css" rel="stylesheet" media="all" href="/css/main.css")
+    link(rel="shortcut icon" href="/static/misc/favicon.ico")
+    link(type="text/css" rel="stylesheet" media="all" href="/css/main.css")
  body
+  #svgStore
+    include ../../../public/media/svg.svg
+  include ../partials/header.partial.jade
   block content
    div.container
     
   block scripts
-   script(type="text/javascript" src="/js/main.min.js")
+    script(type="text/javascript" src="/js/main.min.js")
+    script(type="text/javascript" src="/js/global.min.js")

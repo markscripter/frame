@@ -1,0 +1,30 @@
+header {
+  background: black;
+  color: white;
+
+  nav {
+    display: block;
+    position: fixed;
+    top: 55px;
+    left: -75%;
+    width: 75%;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    display: block;
+
+    &[aria-hidden="false"] {
+      left: 0px;
+      transition: 0.5s;
+      -webkit-transition: 0.5s;
+      box-shadow: 3px 0px rgba(125,125,125,0.5);
+    }
+
+    ul {
+      list-style:none;
+
+      li {
+        float:left;
+      }
+    }
+  }
+}

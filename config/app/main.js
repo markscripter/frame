@@ -8,8 +8,10 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var glob = require('glob');
 var chalk = require('chalk');
-
+var passport = require('passport');
+var session = require('express-session');
 var appRoot = require('app-root-path');
+var flash = require('connect-flash');
 
 module.exports = function () {
   var app = express();
@@ -37,16 +39,23 @@ module.exports = function () {
   app.use(helmet.ienoopen());
   app.disable('x-powered-by');
 
+
+  app.use(session({
+    saveUninitialized: true,
+    resave: true,
+    secret: require('./all.js').secret
+  }));
+  app.use(flash());
+  app.use(passport.initialize());
+  app.use(passport.session());
+
   /**********************
     Models
   ***********************/
-  glob(appRoot + '/server/models/**.model.js', {}, function (err, models) {
-    if (err) {
-      console.log(chalk.bgRed.black(err));
-    }
-    models.forEach(function (model) {
-      require(model);
-    });
+  var models = glob.sync(appRoot + '/server/models/**.model.js');
+  models.forEach(function (model) {
+    console.log(chalk.blue(model));
+    require(model);
   });
 
   /**********************

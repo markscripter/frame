@@ -17,3 +17,32 @@
 */
 
 @import "objects/grid.scss";
+
+/*
+  ELEMENT STYLES
+  ------- ------
+*/
+
+a {
+  color: silver;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: gray;
+  }
+}
+
+/*
+  SVG
+  ---
+*/
+
+@import "objects/svg.scss";
+
+/*
+  HEADER
+  ------
+*/
+
+@import "objects/header.scss";

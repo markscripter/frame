@@ -1,7 +1,7 @@
 {
   "pageTitle": "Hello",
   "pageHeading": "World - hi there",
-  "navigation" : {
-    
-  }
+  "mergeFiles" : [
+    "partials/header.json"
+  ]
 }

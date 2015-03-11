@@ -813,3 +813,67 @@ td, th {
     order: -1; }
   .last-lg {
     order: 1; } }
+
+/*
+  ELEMENT STYLES
+  ------- ------
+*/
+a {
+  color: silver; }
+  a:hover, a:active, a:focus {
+    color: gray; }
+
+/*
+  SVG
+  ---
+*/
+#svgStore {
+  display: none; }
+
+.logo {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 5px;
+  stroke: white;
+  stroke-width: 10; }
+
+.menu-icon {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  stroke: white;
+  fill: white;
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  cursor: pointer; }
+  .menu-icon:after {
+    content: "MENU"; }
+
+/*
+  HEADER
+  ------
+*/
+header {
+  background: black;
+  color: white; }
+  header nav {
+    display: block;
+    position: fixed;
+    top: 55px;
+    left: -75%;
+    width: 75%;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    display: block; }
+    header nav[aria-hidden="false"] {
+      left: 0px;
+      transition: 0.5s;
+      -webkit-transition: 0.5s;
+      box-shadow: 3px 0px rgba(125, 125, 125, 0.5); }
+    header nav ul {
+      list-style: none; }
+      header nav ul li {
+        float: left; }

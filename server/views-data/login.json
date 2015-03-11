@@ -1,0 +1,6 @@
+{
+  "pageTitle": "Login",
+  "mergeFiles" : [
+    "partials/header.json"
+  ]
+}
