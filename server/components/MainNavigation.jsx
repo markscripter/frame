@@ -24,16 +24,6 @@ var MenuBar = React.createClass({
   }
 });
 
-// var MainNavigation = React.createClass({
-//   render : function () {
-//     return (
-//       <nav id="mainNav" role="menubar" aria-expanded="false" aria-hidden="true">
-//         <MenuBar items={this.props.data} />
-//       </nav>
-//     )
-//   }
-// });
-
 var items = [{
   "href" : "/",
   "text" : "Home"
@@ -43,7 +33,6 @@ var items = [{
 }];
 
 React.render(
-  // <MainNavigation data={items} />,
   <MenuBar items={items} />,
   document.getElementById('mainNav')
 );

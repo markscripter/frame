@@ -1,9 +1,5 @@
 {
-  "mainNav" : [{
-    "href" : "/",
-    "text" : "Home"
-  },{
-    "href" : "/article",
-    "text" : "Articles"
-  }]
+  "mainNav" : {
+    
+  }
 }
