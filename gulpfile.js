@@ -1,22 +1,21 @@
 var gulp = require("gulp");
 var jade = require("gulp-jade");
-var rename = require("gulp-rename");
+// var rename = require("gulp-rename");
 var uglify = require("gulp-uglify");
 var concat = require("gulp-concat");
 var jshint = require("gulp-jshint");
 var sass = require("gulp-sass");
-var gutil = require("gulp-util");
+// var gutil = require("gulp-util");
 var express = require("gulp-express");
 var wrapper = require("gulp-wrapper");
 var react = require("gulp-react");
 var svgstore = require("gulp-svgstore");
 var svgmin = require("gulp-svgmin");
 var glob = require("glob");
-var path = require("path");
+// var path = require("path");
 var pageData = require("./helpers/page-data");
 
 var DEST = "public/";
-var SRC = "/";
 
 var paths = {
   scripts: ["server/**/**.js"],

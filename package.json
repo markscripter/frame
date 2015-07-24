@@ -9,7 +9,7 @@
   "devDependencies": {
     "backbone": "^1.1.2",
     "cheerio": "^0.18.0",
-    "eslint": "^0.24.0",
+    "eslint": "^0.24.1",
     "express-session": "^1.10.3",
     "gulp": "^3.8.11",
     "gulp-concat": "^2.5.2",
